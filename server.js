@@ -29,7 +29,9 @@ const io = require('socket.io')(http)
 io.on('connection',(socket)=>{
 
     arr.push(socket.id);
+    
     socket.emit('total_users_online',arr.length)
+    console.log("Online Users:",arr.length)
    
     socket.on('message',(msg)=>{
         socket.broadcast.emit('message',msg);
