@@ -10,6 +10,14 @@ do {
 
 const input = document.querySelector('input');
 const chat_area = document.getElementById('chat-area');
+const userName = document.getElementById('userName');
+const note = document.getElementById('note');
+
+
+userName.innerHTML = `Welcome!! ${username} `;
+note.style.color = "red"
+note.innerHTML = "Note: You can chat with the joined members anonymously";
+
 
 input.addEventListener('keydown',(e)=>{
     if(e.key === 'Enter'){
