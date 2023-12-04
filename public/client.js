@@ -12,11 +12,18 @@ const input = document.querySelector('input');
 const chat_area = document.getElementById('chat-area');
 const userName = document.getElementById('userName');
 const note = document.getElementById('note');
+const total_users_online = document.getElementById('total_users_online');
+
 
 
 userName.innerHTML = `Welcome!! ${username} `;
 note.style.color = "red"
 note.innerHTML = "Note: You can chat with the joined members anonymously";
+
+
+socket.on('total_users_online',(val)=>{
+    total_users_online.innerHTML = `Online Users : ${val}`
+})
 
 
 input.addEventListener('keydown',(e)=>{
